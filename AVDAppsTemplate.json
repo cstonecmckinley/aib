@@ -38,7 +38,7 @@
         },
         "source": {
           "type": "PlatformImage",
-          "publisher": "<ImagePublisher
+          "publisher": "<ImagePublisher>",
           "offer": "<ImageOffer>",
           "sku": "<ImageSKU>",
           "version": "latest"
