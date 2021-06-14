@@ -31,7 +31,7 @@
         }
       },
       "properties": {
-        "buildTimeoutInMinutes": 30,
+        "buildTimeoutInMinutes": 90,
         "vmProfile": {
           "vmSize": "<VMSize>",
           "osDiskSizeGB": 127
@@ -64,9 +64,16 @@
           },
           {
             "type": "PowerShell",
+            "name": "GetInstallScript",
+            "inline": [
+              "c:\\temp\\azcopy.exe copy '<Shared Access Signature to install script>' c:\\temp\\Install-Applications.ps1",
+            ]
+          },
+          {
+            "type": "PowerShell",
             "runElevated": true,
             "name": "RunPoShInstall",
-            "scriptUri": "<URI to PowerShell Script>"
+            "scriptUri": "c:\\temp\\Install-Applications.ps1"
           }
         ],
         "distribute": [
