@@ -31,7 +31,7 @@
         }
       },
       "properties": {
-        "buildTimeoutInMinutes": 960,
+        "buildTimeoutInMinutes": 240,
         "vmProfile": {
           "vmSize": "<VMSize>",
           "osDiskSizeGB": 127
@@ -56,37 +56,59 @@
           },
           {
             "type": "PowerShell",
-            "name": "GetArchive",
+            "name": "GetFiles",
             "inline": [
               "c:\\temp\\azcopy.exe copy '<Shared Access Signature to archive file>' c:\\temp\\software.zip",
-              "Expand-Archive 'c:\\temp\\software.zip' c:\\temp"
-            ]
-          },
-          {
-            "type": "PowerShell",
-            "name": "GetInstallScript",
-            "inline": [
-              "c:\\temp\\azcopy.exe copy '<Shared Access Signature to install script>' c:\\temp\\Install-Applications.ps1"
+              "Expand-Archive 'c:\\temp\\software.zip' c:\\temp",
+              "c:\\temp\\azcopy.exe copy '<Shared Access Signature to install script 1>' c:\\temp\\Install-Applications-1.ps1",
+              "c:\\temp\\azcopy.exe copy '<Shared Access Signature to install script 2>' c:\\temp\\Install-Applications-2.ps1",
+              "c:\\temp\\azcopy.exe copy '<Shared Access Signature to install script 3>' c:\\temp\\Install-Applications-3.ps1",
+              "c:\\temp\\azcopy.exe copy '<Shared Access Signature to install script 4>' c:\\temp\\Install-Applications-4.ps1",
+              "c:\\temp\\azcopy.exe copy '<Shared Access Signature to install script 5>' c:\\temp\\Install-Applications-5.ps1"
             ]
           },
           {
             "type": "PowerShell",
             "runElevated": true,
             "name": "RunPoShInstall",
-            "scriptUri": "<Shared Access Signature to install script>"
+            "scriptUri": "<Shared Access Signature to install script 1>"
           },
           {
             "type": "WindowsRestart"
           },
-            {
-                "type": "WindowsUpdate",
-                "searchCriteria": "IsInstalled=0",
-                "filters": [
-                    "exclude:$_.Title -like '*Preview*'",
-                    "include:$true"
-                            ],
-                "updateLimit": 50
-            }
+          {
+            "type": "PowerShell",
+            "runElevated": true,
+            "name": "RunPoShInstall",
+            "scriptUri": "<Shared Access Signature to install script 2>"
+          },
+          {
+            "type": "WindowsRestart"
+          },
+          {
+            "type": "PowerShell",
+            "runElevated": true,
+            "name": "RunPoShInstall",
+            "scriptUri": "<Shared Access Signature to install script 3"
+          },
+          {
+            "type": "WindowsRestart"
+          },
+          {
+            "type": "PowerShell",
+            "runElevated": true,
+            "name": "RunPoShInstall",
+            "scriptUri": "<Shared Access Signature to install script 4>"
+          },
+          {
+            "type": "WindowsRestart"
+          },
+          {
+            "type": "PowerShell",
+            "runElevated": true,
+            "name": "RunPoShInstall",
+            "scriptUri": "<Shared Access Signature to install script 5>"
+          }
         ],
         "distribute": [
           {
