@@ -31,7 +31,7 @@
         }
       },
       "properties": {
-        "buildTimeoutInMinutes": 120,
+        "buildTimeoutInMinutes": 960,
         "vmProfile": {
           "vmSize": "<VMSize>",
           "osDiskSizeGB": 127
@@ -74,6 +74,9 @@
             "runElevated": true,
             "name": "RunPoShInstall",
             "scriptUri": "<Shared Access Signature to install script>"
+          },
+          {
+            "type": "WindowsRestart"
           }
         ],
         "distribute": [
