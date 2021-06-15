@@ -77,7 +77,16 @@
           },
           {
             "type": "WindowsRestart"
-          }
+          },
+            {
+                "type": "WindowsUpdate",
+                "searchCriteria": "IsInstalled=0",
+                "filters": [
+                    "exclude:$_.Title -like '*Preview*'",
+                    "include:$true"
+                            ],
+                "updateLimit": 50
+            }
         ],
         "distribute": [
           {
