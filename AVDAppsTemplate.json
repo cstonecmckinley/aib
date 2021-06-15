@@ -73,7 +73,7 @@
             "type": "PowerShell",
             "runElevated": true,
             "name": "RunPoShInstall",
-            "scriptUri": "c:\\temp\\Install-Applications.ps1"
+            "scriptUri": "c:\temp\Install-Applications.ps1"
           }
         ],
         "distribute": [
