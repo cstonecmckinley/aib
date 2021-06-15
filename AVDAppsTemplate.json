@@ -89,7 +89,7 @@
             "type": "PowerShell",
             "runElevated": true,
             "name": "RunPoShInstall",
-            "scriptUri": "<Shared Access Signature to install script 3"
+            "scriptUri": "<Shared Access Signature to install script 3>"
           },
           {
             "type": "WindowsRestart"
