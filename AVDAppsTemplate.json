@@ -60,18 +60,13 @@
             "inline": [
               "c:\\temp\\azcopy.exe copy '<Shared Access Signature to archive file>' c:\\temp\\software.zip",
               "Expand-Archive 'c:\\temp\\software.zip' c:\\temp",
-              "c:\\temp\\azcopy.exe copy '<Shared Access Signature to install script 1>' c:\\temp\\Install-Applications-1.ps1",
-              "c:\\temp\\azcopy.exe copy '<Shared Access Signature to install script 2>' c:\\temp\\Install-Applications-2.ps1",
-              "c:\\temp\\azcopy.exe copy '<Shared Access Signature to install script 3>' c:\\temp\\Install-Applications-3.ps1",
-              "c:\\temp\\azcopy.exe copy '<Shared Access Signature to install script 4>' c:\\temp\\Install-Applications-4.ps1",
-              "c:\\temp\\azcopy.exe copy '<Shared Access Signature to install script 5>' c:\\temp\\Install-Applications-5.ps1"
             ]
           },
           {
             "type": "PowerShell",
             "runElevated": true,
-            "name": "RunPoShInstall",
-            "scriptUri": "<Shared Access Signature to install script 1>"
+            "name": "Install-Developer-Tools-1",
+            "scriptUri": "<Install-Developer-Tools-1>"
           },
           {
             "type": "WindowsRestart"
@@ -79,8 +74,8 @@
           {
             "type": "PowerShell",
             "runElevated": true,
-            "name": "RunPoShInstall",
-            "scriptUri": "<Shared Access Signature to install script 2>"
+            "name": "Install-Developer-Tools-2",
+            "scriptUri": "<Install-Developer-Tools-2>"
           },
           {
             "type": "WindowsRestart"
@@ -88,8 +83,8 @@
           {
             "type": "PowerShell",
             "runElevated": true,
-            "name": "RunPoShInstall",
-            "scriptUri": "<Shared Access Signature to install script 3>"
+            "name": "Install-User-Applications",
+            "scriptUri": "<Install-User-Applications>"
           },
           {
             "type": "WindowsRestart"
@@ -97,8 +92,8 @@
           {
             "type": "PowerShell",
             "runElevated": true,
-            "name": "RunPoShInstall",
-            "scriptUri": "<Shared Access Signature to install script 4>"
+            "name": "Install-Teams",
+            "scriptUri": "<Install-Teams>"
           },
           {
             "type": "WindowsRestart"
@@ -106,8 +101,8 @@
           {
             "type": "PowerShell",
             "runElevated": true,
-            "name": "RunPoShInstall",
-            "scriptUri": "<Shared Access Signature to install script 5>"
+            "name": "Install-Chocolatey-Apps",
+            "scriptUri": "<Install-Chocolatey-Apps>"
           },
           {
             "type": "WindowsRestart"
@@ -115,8 +110,8 @@
           {
             "type": "PowerShell",
             "runElevated": true,
-            "name": "RunPoShInstall",
-            "scriptUri": "<Shared Access Signature to install script 6>"
+            "name": "Prepare-Image",
+            "scriptUri": "<Prepare-Image>"
           },
           {
             "type": "WindowsRestart"
@@ -124,8 +119,17 @@
           {
             "type": "PowerShell",
             "runElevated": true,
-            "name": "RunPoShInstall",
-            "scriptUri": "<Shared Access Signature to install script 7>"
+            "name": "Optimize-Windows",
+            "scriptUri": "<Optimize-Windows>"
+          },
+          {
+            "type": "WindowsRestart"
+          },
+          {
+            "type": "PowerShell",
+            "runElevated": true,
+            "name": "Update-Windows",
+            "scriptUri": "<Update-Windows>"
           }
         ],
         "distribute": [
