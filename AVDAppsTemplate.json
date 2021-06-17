@@ -108,6 +108,24 @@
             "runElevated": true,
             "name": "RunPoShInstall",
             "scriptUri": "<Shared Access Signature to install script 5>"
+          },
+          {
+            "type": "WindowsRestart"
+          },
+          {
+            "type": "PowerShell",
+            "runElevated": true,
+            "name": "RunPoShInstall",
+            "scriptUri": "<Shared Access Signature to install script 6>"
+          },
+          {
+            "type": "WindowsRestart"
+          },
+          {
+            "type": "PowerShell",
+            "runElevated": true,
+            "name": "RunPoShInstall",
+            "scriptUri": "<Shared Access Signature to install script 7>"
           }
         ],
         "distribute": [
