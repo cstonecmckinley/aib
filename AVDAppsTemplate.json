@@ -60,16 +60,16 @@
             "name": "GetFiles",
             "inline": [
               "c:\\temp\\azcopy.exe copy '<software-directories.zip>' c:\\temp\\software-directories.zip",
-              "Expand-Archive 'c:\\temp\\software-directories.zip' c:\\temp",
+              "Expand-Archive 'c:\\temp\\software-directories.zip' c:\\temp -force",
               "Remove-Item -Path 'c:\\temp\\software-directories.zip' -force",
               "c:\\temp\\azcopy.exe copy '<software-foxit.zip>' c:\\temp\\software-foxit.zip",
-              "Expand-Archive 'c:\\temp\\software-foxit.zip' c:\\temp",
+              "Expand-Archive 'c:\\temp\\software-foxit.zip' c:\\temp -force",
               "Remove-Item -Path 'c:\\temp\\software-foxit.zip' -force",
               "c:\\temp\\azcopy.exe copy '<software-msi-files.zip>' c:\\temp\\software-msi-files.zip",
-              "Expand-Archive 'c:\\temp\\software-msi-files.zip' c:\\temp",
+              "Expand-Archive 'c:\\temp\\software-msi-files.zip' c:\\temp -force",
               "Remove-Item -Path 'c:\\temp\\software-msi-files.zip' -force",
               "c:\\temp\\azcopy.exe copy '<software-exe-files.zip>' c:\\temp\\software-exe-files.zip",
-              "Expand-Archive 'c:\\temp\\software-exe-files.zip' c:\\temp",
+              "Expand-Archive 'c:\\temp\\software-exe-files.zip' c:\\temp -force",
               "Remove-Item -Path 'c:\\temp\\software-exe-files.zip' -force"
             ]
           },
