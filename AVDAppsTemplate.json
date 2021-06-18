@@ -161,6 +161,18 @@
                         "restartCheckCommand": "write-host 'restarting post Image Prepare'",
                         "restartTimeout": "5m"
           },
+          {
+            "type": "PowerShell",
+            "runAsSystem": true,
+            "runElevated": true,
+            "name": "Optimize-Windows",
+            "scriptUri": "<Optimize-Windows>"
+          },
+          {
+                        "type": "WindowsRestart",
+                        "restartCheckCommand": "write-host 'restarting post OS optimize Prepare'",
+                        "restartTimeout": "5m"
+          },
                     {
                         "type": "WindowsUpdate",
                         "searchCriteria": "IsInstalled=0",
