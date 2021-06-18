@@ -87,7 +87,7 @@
           {
                         "type": "WindowsRestart",
                         "restartCheckCommand": "write-host 'restarting post Developer Tools 1 of 2 Install'",
-                        "restartTimeout": "5m"
+                        "restartTimeout": "10m"
           },
           {
             "type": "PowerShell",
@@ -99,7 +99,7 @@
           {
                         "type": "WindowsRestart",
                         "restartCheckCommand": "write-host 'restarting post Developer Tools 2 of 2 Install'",
-                        "restartTimeout": "5m"
+                        "restartTimeout": "10m"
           },
           {
             "type": "PowerShell",
@@ -111,7 +111,7 @@
           {
                         "type": "WindowsRestart",
                         "restartCheckCommand": "write-host 'restarting post User Applications Install'",
-                        "restartTimeout": "5m"
+                        "restartTimeout": "10m"
           },
           {
             "type": "PowerShell",
@@ -123,7 +123,7 @@
           {
                         "type": "WindowsRestart",
                         "restartCheckCommand": "write-host 'restarting post Teams Install'",
-                        "restartTimeout": "5m"
+                        "restartTimeout": "10m"
           },
           {
             "type": "PowerShell",
@@ -135,7 +135,7 @@
           {
                         "type": "WindowsRestart",
                         "restartCheckCommand": "write-host 'restarting post Chocolatey Install'",
-                        "restartTimeout": "5m"
+                        "restartTimeout": "10m"
           },
           {
             "type": "PowerShell",
@@ -147,7 +147,7 @@
           {
                         "type": "WindowsRestart",
                         "restartCheckCommand": "write-host 'restarting post FsLogix Install'",
-                        "restartTimeout": "5m"
+                        "restartTimeout": "10m"
           },
           {
             "type": "PowerShell",
@@ -159,7 +159,7 @@
           {
                         "type": "WindowsRestart",
                         "restartCheckCommand": "write-host 'restarting post Image Prepare'",
-                        "restartTimeout": "5m"
+                        "restartTimeout": "10m"
           },
           {
             "type": "PowerShell",
@@ -171,7 +171,7 @@
           {
                         "type": "WindowsRestart",
                         "restartCheckCommand": "write-host 'restarting post OS optimize Prepare'",
-                        "restartTimeout": "5m"
+                        "restartTimeout": "10m"
           },
           {
             "type": "WindowsUpdate",
