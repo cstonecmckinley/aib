@@ -127,12 +127,14 @@
           {
             "type": "WindowsRestart"
           },
-          {
-            "type": "PowerShell",
-            "runElevated": true,
-            "name": "Update-Windows",
-            "scriptUri": "<Update-Windows>"
-          }
+                    {
+                        "type": "WindowsUpdate",
+                        "searchCriteria": "IsInstalled=0",
+                        "filters": [
+                            "exclude:$_.Title -like '*Preview*'",
+                            "include:$true"
+                                    ]
+                    }
         ],
         "distribute": [
           {
