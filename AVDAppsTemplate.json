@@ -46,6 +46,8 @@
         "customize": [
           {
             "type": "PowerShell",
+            "runAsSystem": true,
+            "runElevated": true,
             "name": "GetAzCopy",
             "inline": [
               "New-Item -Type Directory -Path 'c:\\' -Name temp",
@@ -57,6 +59,8 @@
           },
           {
             "type": "PowerShell",
+            "runAsSystem": true,
+            "runElevated": true,
             "name": "GetFiles",
             "inline": [
               "c:\\temp\\azcopy.exe copy '<software-directories.zip>' c:\\temp\\software-directories.zip",
@@ -75,6 +79,7 @@
           },
           {
             "type": "PowerShell",
+            "runAsSystem": true,
             "runElevated": true,
             "name": "Install-Developer-Tools-1",
             "scriptUri": "<Install-Developer-Tools-1>"
@@ -86,6 +91,7 @@
           },
           {
             "type": "PowerShell",
+            "runAsSystem": true,
             "runElevated": true,
             "name": "Install-Developer-Tools-2",
             "scriptUri": "<Install-Developer-Tools-2>"
@@ -97,6 +103,7 @@
           },
           {
             "type": "PowerShell",
+            "runAsSystem": true,
             "runElevated": true,
             "name": "Install-User-Applications",
             "scriptUri": "<Install-User-Applications>"
@@ -108,6 +115,7 @@
           },
           {
             "type": "PowerShell",
+            "runAsSystem": true,
             "runElevated": true,
             "name": "Install-Teams",
             "scriptUri": "<Install-Teams>"
@@ -119,6 +127,7 @@
           },
           {
             "type": "PowerShell",
+            "runAsSystem": true,
             "runElevated": true,
             "name": "Install-Chocolatey-Apps",
             "scriptUri": "<Install-Chocolatey-Apps>"
@@ -130,6 +139,7 @@
           },
           {
             "type": "PowerShell",
+            "runAsSystem": true,
             "runElevated": true,
             "name": "Install-FsLogix",
             "scriptUri": "<Install-FsLogix>"
@@ -141,6 +151,7 @@
           },
           {
             "type": "PowerShell",
+            "runAsSystem": true,
             "runElevated": true,
             "name": "Prepare-Image",
             "scriptUri": "<Prepare-Image>"
