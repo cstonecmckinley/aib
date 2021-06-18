@@ -121,6 +121,15 @@
           {
             "type": "PowerShell",
             "runElevated": true,
+            "name": "Install-FsLogix",
+            "scriptUri": "<InstallFsLogix>"
+          },
+          {
+            "type": "WindowsRestart"
+          },
+          {
+            "type": "PowerShell",
+            "runElevated": true,
             "name": "Prepare-Image",
             "scriptUri": "<Prepare-Image>"
           },
