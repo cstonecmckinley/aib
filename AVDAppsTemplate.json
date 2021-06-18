@@ -173,14 +173,14 @@
                         "restartCheckCommand": "write-host 'restarting post OS optimize Prepare'",
                         "restartTimeout": "5m"
           },
-                    {
-                        "type": "WindowsUpdate",
-                        "searchCriteria": "IsInstalled=0",
-                        "filters": [
-                            "exclude:$_.Title -like '*Preview*'",
-                            "include:$true"
-                                    ]
-                    }
+          {
+            "type": "WindowsUpdate",
+            "searchCriteria": "IsInstalled=0",
+            "filters": [
+              "exclude:$_.Title -like '*Preview*'",
+              "include:$true"
+            ]
+          }
         ],
         "distribute": [
           {
