@@ -141,25 +141,8 @@
             "type": "PowerShell",
             "runAsSystem": true,
             "runElevated": true,
-            "name": "Install-FsLogix",
-            "scriptUri": "<Install-FsLogix>"
-          },
-          {
-                        "type": "WindowsRestart",
-                        "restartCheckCommand": "write-host 'restarting post FsLogix Install'",
-                        "restartTimeout": "10m"
-          },
-          {
-            "type": "PowerShell",
-            "runAsSystem": true,
-            "runElevated": true,
             "name": "Prepare-Image",
             "scriptUri": "<Prepare-Image>"
-          },
-          {
-                        "type": "WindowsRestart",
-                        "restartCheckCommand": "write-host 'restarting post Image Prepare'",
-                        "restartTimeout": "10m"
           },
           {
             "type": "PowerShell",
