@@ -152,11 +152,6 @@
             "scriptUri": "<Optimize-Windows>"
           },
           {
-                        "type": "WindowsRestart",
-                        "restartCheckCommand": "write-host 'restarting post Optimize-Windows'",
-                        "restartTimeout": "10m"
-          },
-          {
             "type": "PowerShell",
             "runAsSystem": true,
             "runElevated": true,
