@@ -110,7 +110,19 @@
           },
           {
                         "type": "WindowsRestart",
-                        "restartCheckCommand": "write-host 'restarting post User Applications Install'",
+                        "restartCheckCommand": "write-host 'restarting post User Applications a Install'",
+                        "restartTimeout": "10m"
+          },
+          {
+            "type": "PowerShell",
+            "runAsSystem": true,
+            "runElevated": true,
+            "name": "Install-User-Applications",
+            "scriptUri": "<Install-User-Applications-b>"
+          },
+          {
+                        "type": "WindowsRestart",
+                        "restartCheckCommand": "write-host 'restarting post User Applications b Install'",
                         "restartTimeout": "10m"
           },
           {
