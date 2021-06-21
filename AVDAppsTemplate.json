@@ -72,10 +72,37 @@
               "c:\\temp\\azcopy.exe copy '<software-msi-files.zip>' c:\\temp\\software-msi-files.zip",
               "Expand-Archive 'c:\\temp\\software-msi-files.zip' c:\\temp -force",
               "Remove-Item -Path 'c:\\temp\\software-msi-files.zip' -force",
+              "c:\\temp\\azcopy.exe copy '<software-pdn-s2s.zip>' c:\\temp\\software-pdn-s2s.zip",
+              "Expand-Archive 'c:\\temp\\software-pdn-s2s.zip' c:\\temp -force",
+              "Remove-Item -Path 'c:\\temp\\software-pdn-s2s.zip' -force",
               "c:\\temp\\azcopy.exe copy '<software-exe-files.zip>' c:\\temp\\software-exe-files.zip",
               "Expand-Archive 'c:\\temp\\software-exe-files.zip' c:\\temp -force",
               "Remove-Item -Path 'c:\\temp\\software-exe-files.zip' -force"
             ]
+          },
+          {
+            "type": "PowerShell",
+            "runAsSystem": true,
+            "runElevated": true,
+            "name": "Install-pdn",
+            "scriptUri": "<Install-pdn>"
+          },
+          {
+                        "type": "WindowsRestart",
+                        "restartCheckCommand": "write-host 'restarting post paint.net'",
+                        "restartTimeout": "10m"
+          },
+          {
+            "type": "PowerShell",
+            "runAsSystem": true,
+            "runElevated": true,
+            "name": "Install-star2star",
+            "scriptUri": "<Install-star2star>"
+          },
+          {
+                        "type": "WindowsRestart",
+                        "restartCheckCommand": "write-host 'restarting post star2star'",
+                        "restartTimeout": "10m"
           },
           {
             "type": "PowerShell",
