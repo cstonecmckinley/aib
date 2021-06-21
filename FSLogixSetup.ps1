@@ -10,9 +10,9 @@ Param (
 )
 
 ######################
-#    WVD Variables   #
+#    AVD Variables   #
 ######################
-$LocalWVDpath            = "c:\temp\wvd\"
+$LocalAVDpath            = "c:\temp\AVD\"
 $FSLogixURI              = 'https://aka.ms/fslogix_download'
 $FSInstaller             = 'FSLogixAppsSetup.zip'
 
@@ -21,7 +21,7 @@ $FSInstaller             = 'FSLogixAppsSetup.zip'
 #    Test/Create Temp Directory    #
 ####################################
 if((Test-Path c:\temp) -eq $false) {
-    Add-Content -LiteralPath C:\New-WVDSessionHost.log "Create C:\temp Directory"
+    Add-Content -LiteralPath C:\New-AVDSessionHost.log "Create C:\temp Directory"
     Write-Host `
         -ForegroundColor Cyan `
         -BackgroundColor Black `
@@ -29,30 +29,30 @@ if((Test-Path c:\temp) -eq $false) {
     New-Item -Path c:\temp -ItemType Directory
 }
 else {
-    Add-Content -LiteralPath C:\New-WVDSessionHost.log "C:\temp Already Exists"
+    Add-Content -LiteralPath C:\New-AVDSessionHost.log "C:\temp Already Exists"
     Write-Host `
         -ForegroundColor Yellow `
         -BackgroundColor Black `
         "temp directory already exists"
 }
-if((Test-Path $LocalWVDpath) -eq $false) {
-    Add-Content -LiteralPath C:\New-WVDSessionHost.log "Create C:\temp\WVD Directory"
+if((Test-Path $LocalAVDpath) -eq $false) {
+    Add-Content -LiteralPath C:\New-AVDSessionHost.log "Create C:\temp\AVD Directory"
     Write-Host `
         -ForegroundColor Cyan `
         -BackgroundColor Black `
-        "creating c:\temp\wvd directory"
-    New-Item -Path $LocalWVDpath -ItemType Directory
+        "creating c:\temp\AVD directory"
+    New-Item -Path $LocalAVDpath -ItemType Directory
 }
 else {
-    Add-Content -LiteralPath C:\New-WVDSessionHost.log "C:\temp\WVD Already Exists"
+    Add-Content -LiteralPath C:\New-AVDSessionHost.log "C:\temp\AVD Already Exists"
     Write-Host `
         -ForegroundColor Yellow `
         -BackgroundColor Black `
-        "c:\temp\wvd directory already exists"
+        "c:\temp\AVD directory already exists"
 }
-New-Item -Path c:\ -Name New-WVDSessionHost.log -ItemType File
+New-Item -Path c:\ -Name New-AVDSessionHost.log -ItemType File
 Add-Content `
--LiteralPath C:\New-WVDSessionHost.log `
+-LiteralPath C:\New-AVDSessionHost.log `
 "
 ProfilePath       = $ProfilePath
 RegistrationToken = $RegistrationToken
@@ -61,32 +61,32 @@ Optimize          = $Optimize
 
 
 #################################
-#    Download WVD Componants    #
+#    Download AVD Componants    #
 #################################
-Add-Content -LiteralPath C:\New-WVDSessionHost.log "Downloading FSLogix"
-    Invoke-WebRequest -Uri $FSLogixURI -OutFile "$LocalWVDpath$FSInstaller"
+Add-Content -LiteralPath C:\New-AVDSessionHost.log "Downloading FSLogix"
+    Invoke-WebRequest -Uri $FSLogixURI -OutFile "$LocalAVDpath$FSInstaller"
 
 
 ##############################
-#    Prep for WVD Install    #
+#    Prep for AVD Install    #
 ##############################
-Add-Content -LiteralPath C:\New-WVDSessionHost.log "Unzip FSLogix"
+Add-Content -LiteralPath C:\New-AVDSessionHost.log "Unzip FSLogix"
 Expand-Archive `
-    -LiteralPath "C:\temp\wvd\$FSInstaller" `
-    -DestinationPath "$LocalWVDpath\FSLogix" `
+    -LiteralPath "C:\temp\AVD\$FSInstaller" `
+    -DestinationPath "$LocalAVDpath\FSLogix" `
     -Force `
     -Verbose
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-cd $LocalWVDpath 
-Add-Content -LiteralPath C:\New-WVDSessionHost.log "UnZip FXLogix Complete"
+cd $LocalAVDpath 
+Add-Content -LiteralPath C:\New-AVDSessionHost.log "UnZip FXLogix Complete"
 
 
 #########################
 #    FSLogix Install    #
 #########################
-Add-Content -LiteralPath C:\New-WVDSessionHost.log "Installing FSLogix"
+Add-Content -LiteralPath C:\New-AVDSessionHost.log "Installing FSLogix"
 $fslogix_deploy_status = Start-Process `
-    -FilePath "$LocalWVDpath\FSLogix\x64\Release\FSLogixAppsSetup.exe" `
+    -FilePath "$LocalAVDpath\FSLogix\x64\Release\FSLogixAppsSetup.exe" `
     -ArgumentList "/install /quiet" `
     -Wait `
     -Passthru
@@ -95,7 +95,7 @@ $fslogix_deploy_status = Start-Process `
 #######################################
 #    FSLogix User Profile Settings    #
 #######################################
-Add-Content -LiteralPath C:\New-WVDSessionHost.log "Configure FSLogix Profile Settings"
+Add-Content -LiteralPath C:\New-AVDSessionHost.log "Configure FSLogix Profile Settings"
 Push-Location 
 Set-Location HKLM:\SOFTWARE\
 New-Item `
