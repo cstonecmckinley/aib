@@ -96,18 +96,6 @@
             "type": "PowerShell",
             "runAsSystem": true,
             "runElevated": true,
-            "name": "Install-star2star",
-            "scriptUri": "<Install-star2star>"
-          },
-          {
-                        "type": "WindowsRestart",
-                        "restartCheckCommand": "write-host 'restarting post star2star'",
-                        "restartTimeout": "10m"
-          },
-          {
-            "type": "PowerShell",
-            "runAsSystem": true,
-            "runElevated": true,
             "name": "Install-Developer-Tools-1",
             "scriptUri": "<Install-Developer-Tools-1>"
           },
